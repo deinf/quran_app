@@ -1,0 +1,67 @@
+{
+  "expo": {
+    "name": "Qur'an Indonesia",
+    "slug": "quranapp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "quranapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "icon": {
+        "light": "./assets/icon.png",
+        "dark": "./assets/icon-dark.png",
+        "tinted": "./assets/icon-tinted.png"
+      },
+      "supportsTablet": true,
+      "bundleIdentifier": "id.quranapp.indonesia",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "audio"
+        ],
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "id.quranapp.indonesia",
+      "adaptiveIcon": {
+        "backgroundColor": "#184236",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "android.permission.POST_NOTIFICATIONS"
+      ],
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-audio",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 180,
+          "resizeMode": "contain",
+          "backgroundColor": "#184236"
+        }
+      ],
+      "expo-sharing",
+      [
+        "expo-notifications",
+        {
+          "sounds": [
+            "./assets/sounds/adhan.wav"
+          ],
+          "color": "#2F6B52"
+        }
+      ]
+    ]
+  }
+}
