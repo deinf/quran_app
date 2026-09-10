@@ -20,7 +20,12 @@ import { QariSheet } from '@/components/QariSheet';
 import { ListGroup, MarqueeText, Row, elevation } from '@/components/ui';
 import { useOfflineAudio } from '@/offline/audio';
 import { countPrayerNotifications, requestNotificationPermission } from '@/shalat/notifications';
-import { ARABIC_FONT_SIZE, useSettings, type AdhanSound } from '@/store/settings';
+import {
+  ARABIC_FONT_SIZE,
+  useSettings,
+  type AdhanSound,
+  type ThemePreference,
+} from '@/store/settings';
 import {
   ARABIC_FONTS,
   SERIF,
@@ -40,6 +45,12 @@ const SOUND_OPTIONS: { value: AdhanSound; label: string }[] = [
   { value: 'silent', label: 'Senyap' },
 ];
 
+const THEME_OPTIONS: { value: ThemePreference; label: string }[] = [
+  { value: 'system', label: 'Sistem' },
+  { value: 'light', label: 'Terang' },
+  { value: 'dark', label: 'Gelap' },
+];
+
 const APP_VERSION = Constants.expoConfig?.version ?? '1.0.0';
 
 const API_SITE = 'https://equran.id';
@@ -51,7 +62,7 @@ function openApiSite() {
 
 export default function SettingsScreen() {
   const router = useRouter();
-  const { colors, settings, setSetting, resetSettings } = useSettings();
+  const { colors, settings, setSetting, resetSettings, theme } = useSettings();
   const toast = useToast();
   const { totalStored, storedByQari, refreshUsage } = useOfflineAudio();
 
@@ -147,6 +158,22 @@ export default function SettingsScreen() {
           </Text>
         ) : null}
       </View>
+
+      <ListGroup title="Tema">
+        <View style={styles.segmentRow}>
+          <Text style={[styles.rowTitle, { color: colors.text }]}>Tampilan aplikasi</Text>
+          <Segmented
+            options={THEME_OPTIONS}
+            value={settings.themePreference}
+            onChange={(value) => setSetting('themePreference', value)}
+          />
+          {settings.themePreference === 'system' ? (
+            <Text style={[styles.note, { color: colors.textFaint }]}>
+              Mengikuti tema perangkat, saat ini {theme === 'dark' ? 'gelap' : 'terang'}.
+            </Text>
+          ) : null}
+        </View>
+      </ListGroup>
 
       <ListGroup title="Tampilan ayat">
         <View style={styles.sliderRow}>

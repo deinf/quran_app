@@ -1,47 +1,40 @@
-# OSX
-#
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+.expo-shared/
+
+# Native
+ios/
+android/
+
+# Build / distribution
+dist/
+build/
+*.ipa
+*.apk
+*.aab
+
+# Expo / EAS
+.eas/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# macOS
 .DS_Store
 
-# Xcode
-#
-build/
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-xcuserdata
-*.xccheckout
-*.moved-aside
-DerivedData
-*.hmap
-*.ipa
-*.xcuserstate
-project.xcworkspace
+# IDE
+.idea/
+.vscode/
 
-# Android/IntelliJ
-#
-build/
-.idea
-.gradle
-local.properties
-*.iml
-
-# node.js
-#
-node_modules/
-package-lock.json # include if you are using npm - don't use both yarn and npm
-npm-debug.log
-yarn-error.log
-yarn.lock # include if you are using yarn - don't use both npm and yarn
-
-# BUCK
-buck-out/
-\.buckd/
-*.keystore
-
-# Bundle artifact
-*.jsbundle
+# TypeScript
+*.tsbuildinfo

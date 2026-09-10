@@ -74,10 +74,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
             ...DEFAULTS,
             ...stored,
             adhanPrayers: { ...DEFAULTS.adhanPrayers, ...stored.adhanPrayers },
-            themePreference:
-              stored.themePreference && stored.themePreference !== 'system'
-                ? stored.themePreference
-                : DEFAULTS.themePreference,
+            themePreference: stored.themePreference ?? DEFAULTS.themePreference,
           });
         }
       } catch {} finally {
