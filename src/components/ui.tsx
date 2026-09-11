@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from 'react';
 import {
+  AccessibilityInfo,
   ActivityIndicator,
   Animated,
   Easing,
@@ -410,9 +411,24 @@ export function MarqueeText({
 }) {
   const [boxWidth, setBoxWidth] = useState(0);
   const [textWidth, setTextWidth] = useState(0);
+  const [reduceMotion, setReduceMotion] = useState(false);
   const offset = useRef(new Animated.Value(0)).current;
 
-  const overflows = boxWidth > 0 && textWidth > boxWidth + 1;
+  const overflows = boxWidth > 0 && textWidth > boxWidth + 1 && !reduceMotion;
+
+  useEffect(() => {
+    let active = true;
+    AccessibilityInfo.isReduceMotionEnabled()
+      .then((enabled) => {
+        if (active) setReduceMotion(enabled);
+      })
+      .catch(() => {});
+    const subscription = AccessibilityInfo.addEventListener('reduceMotionChanged', setReduceMotion);
+    return () => {
+      active = false;
+      subscription.remove();
+    };
+  }, []);
 
   useEffect(() => {
     offset.setValue(0);

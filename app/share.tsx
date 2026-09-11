@@ -106,8 +106,6 @@ export default function ShareVerseScreen() {
           end={{ x: 1, y: 1 }}
           style={styles.card}
         >
-          <Ionicons name="sparkles" size={22} color={theme.muted} style={styles.sparkle} />
-
           <Text
             style={[
               styles.arabic,
@@ -299,7 +297,6 @@ const styles = StyleSheet.create({
   cardWrap: { borderRadius: radius.xxl, overflow: 'hidden' },
   card: { padding: spacing.xl, gap: spacing.md, minHeight: 360, justifyContent: 'center' },
   cardInner: { width: '100%' },
-  sparkle: { alignSelf: 'center', marginBottom: spacing.sm },
   arabic: { writingDirection: 'rtl', alignSelf: 'stretch' },
   rule: { width: 64, height: 1, alignSelf: 'center', marginVertical: spacing.sm },
   latin: { fontSize: 13, fontStyle: 'italic', lineHeight: 20 },
@@ -320,7 +317,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  brandText: { fontSize: 10, fontWeight: '700', letterSpacing: 1.2 },
+  brandText: { fontSize: 10, fontWeight: '700', letterSpacing: 0.6 },
 
   sectionHead: {
     flexDirection: 'row',
@@ -358,7 +355,14 @@ const styles = StyleSheet.create({
   groupLabel: { marginTop: spacing.md, marginBottom: spacing.sm },
   slider: { height: 34 },
   segmented: { flexDirection: 'row', padding: 4, borderRadius: radius.pill, gap: 4 },
-  segment: { flex: 1, alignItems: 'center', paddingVertical: 10, borderRadius: radius.pill },
+  segment: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: 44,
+    paddingVertical: 10,
+    borderRadius: radius.pill,
+  },
   segmentLabel: { fontSize: 13, fontWeight: '600' },
   toggleRow: {
     flexDirection: 'row',

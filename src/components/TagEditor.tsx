@@ -1,6 +1,15 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
-import { Modal, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import {
+  KeyboardAvoidingView,
+  Modal,
+  Platform,
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
 
 import { Button } from '@/components/ui';
 import { SUGGESTED_TAGS, type Bookmark } from '@/store/library';
@@ -38,7 +47,10 @@ export function TagEditor({
 
   return (
     <Modal visible transparent animationType="slide" onRequestClose={onClose} statusBarTranslucent>
-      <View style={styles.root}>
+      <KeyboardAvoidingView
+        style={styles.root}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      >
         <Pressable
           style={[StyleSheet.absoluteFill, styles.scrim]}
           onPress={onClose}
@@ -96,7 +108,7 @@ export function TagEditor({
 
           <Button label="Simpan" icon="checkmark" onPress={() => onSave(selected)} />
         </View>
-      </View>
+      </KeyboardAvoidingView>
     </Modal>
   );
 }
@@ -115,7 +127,13 @@ const styles = StyleSheet.create({
   title: typeScale.title,
   reference: { ...typeScale.caption, marginTop: -spacing.sm },
   tags: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
-  tag: { paddingHorizontal: spacing.lg, paddingVertical: 9, borderRadius: radius.pill },
+  tag: {
+    justifyContent: 'center',
+    minHeight: 44,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: 9,
+    borderRadius: radius.pill,
+  },
   tagText: { ...typeScale.caption, fontWeight: '700' },
   inputRow: {
     flexDirection: 'row',

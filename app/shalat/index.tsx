@@ -148,8 +148,8 @@ export default function JadwalShalatScreen() {
                   <Text style={[styles.nextName, { color: colors.onHero }]}>{next.label}</Text>
                   <Text style={[styles.nextTime, { color: colors.onHero }]}>{next.time}</Text>
                   <View style={[styles.nextPill, { backgroundColor: colors.onHeroSoft }]}>
-                    <Ionicons name="time-outline" size={13} color={colors.accent} />
-                    <Text style={[styles.nextAway, { color: colors.accent }]}>
+                    <Ionicons name="time-outline" size={13} color={colors.onHeroAccent} />
+                    <Text style={[styles.nextAway, { color: colors.onHeroAccent }]}>
                       {formatCountdown(next.minutesAway)} lagi
                     </Text>
                   </View>

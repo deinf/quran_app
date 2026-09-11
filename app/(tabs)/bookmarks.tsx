@@ -93,7 +93,7 @@ export default function SavedScreen() {
     </View>
   );
 
-  if (!ready) return shell(<Loading />);
+  if (!ready) return shell(<Loading label="Memuat ayat tersimpan…" />);
 
   if (!bookmarks.length) {
     return shell(
@@ -208,6 +208,8 @@ const styles = StyleSheet.create({
 
   filters: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
   filterChip: {
+    justifyContent: 'center',
+    minHeight: 44,
     paddingHorizontal: spacing.lg,
     paddingVertical: 9,
     borderRadius: radius.pill,

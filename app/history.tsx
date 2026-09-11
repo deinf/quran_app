@@ -22,7 +22,7 @@ export default function HistoryScreen() {
     </View>
   );
 
-  if (!ready) return shell(<Loading />);
+  if (!ready) return shell(<Loading label="Memuat riwayat bacaan…" />);
 
   if (!history.length) {
     return shell(

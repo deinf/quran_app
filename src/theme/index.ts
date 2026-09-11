@@ -27,6 +27,7 @@ export type Palette = {
   onHeroSoft: string;
   onHeroMuted: string;
   onHeroFaint: string;
+  onHeroAccent: string;
 };
 
 const light: Palette = {
@@ -37,15 +38,15 @@ const light: Palette = {
   border: '#E4DDCD',
   divider: '#EDE7DB',
   text: '#1A211D',
-  textMuted: '#5B665F',
-  textFaint: '#828A82',
+  textMuted: '#4E5A53',
+  textFaint: '#5F6962',
   primary: '#1B5843',
   primaryText: '#FFFFFF',
   primarySoft: '#E2EDE6',
   onPrimarySoft: '#124633',
   accent: '#B98B36',
   accentSoft: '#F7EEDC',
-  onAccent: '#FFFFFF',
+  onAccent: '#241B08',
   arabic: '#121814',
   highlight: '#FBF3E1',
   danger: '#B3261E',
@@ -54,8 +55,9 @@ const light: Palette = {
   heroGradient: ['#25634C', '#153F31'],
   onHero: '#FFFFFF',
   onHeroSoft: 'rgba(255,255,255,0.15)',
-  onHeroMuted: 'rgba(255,255,255,0.75)',
-  onHeroFaint: 'rgba(255,255,255,0.30)',
+  onHeroMuted: 'rgba(255,255,255,0.88)',
+  onHeroFaint: 'rgba(255,255,255,0.75)',
+  onHeroAccent: '#EFD39A',
 };
 
 const dark: Palette = {
@@ -66,8 +68,8 @@ const dark: Palette = {
   border: '#2A3831',
   divider: '#212D27',
   text: '#E8EFEA',
-  textMuted: '#9BAAA1',
-  textFaint: '#75837B',
+  textMuted: '#A8B7AD',
+  textFaint: '#8B9992',
   primary: '#4FC295',
   primaryText: '#05271B',
   primarySoft: '#173026',
@@ -83,8 +85,9 @@ const dark: Palette = {
   heroGradient: ['#1E5241', '#12332A'],
   onHero: '#EEF6F1',
   onHeroSoft: 'rgba(255,255,255,0.10)',
-  onHeroMuted: 'rgba(255,255,255,0.75)',
-  onHeroFaint: 'rgba(255,255,255,0.22)',
+  onHeroMuted: 'rgba(255,255,255,0.88)',
+  onHeroFaint: 'rgba(255,255,255,0.75)',
+  onHeroAccent: '#EFD39A',
 };
 
 export const palettes = { light, dark };

@@ -36,7 +36,7 @@ const DEFAULTS: Settings = {
   arabicFont: 'scheherazade',
   showLatin: true,
   showTranslation: true,
-  themePreference: 'dark',
+  themePreference: 'system',
   autoplayNext: true,
   followPlayback: true,
   shalatProvinsi: '',

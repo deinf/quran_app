@@ -536,7 +536,14 @@ const styles = StyleSheet.create({
     margin: spacing.md,
     borderRadius: radius.pill,
   },
-  tab: { flex: 1, alignItems: 'center', paddingVertical: 10, borderRadius: radius.pill },
+  tab: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: 44,
+    paddingVertical: 10,
+    borderRadius: radius.pill,
+  },
   tabLabel: { ...typeScale.caption, fontWeight: '700' },
 
   listContent: { paddingHorizontal: spacing.md, paddingBottom: spacing.xxl, gap: spacing.sm },

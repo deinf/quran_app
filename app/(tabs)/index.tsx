@@ -183,7 +183,11 @@ export default function HomeScreen() {
         </View>
 
         {loading && !daily ? (
-          <View style={[styles.versePlaceholder, { backgroundColor: colors.surfaceContainer }]} />
+          <View style={[styles.versePlaceholder, { backgroundColor: colors.surfaceContainer }]}>
+            <Text style={[styles.verseTranslation, { color: colors.textMuted }]}>
+              Memuat ayat harian…
+            </Text>
+          </View>
         ) : error && !daily ? (
           <Pressable
             accessibilityRole="button"
@@ -409,7 +413,13 @@ const styles = StyleSheet.create({
   headActionText: { ...typeScale.caption, fontWeight: '700' },
 
   verseCard: { borderRadius: radius.xl, padding: spacing.lg, gap: spacing.md },
-  versePlaceholder: { borderRadius: radius.xl, minHeight: 250 },
+  versePlaceholder: {
+    borderRadius: radius.xl,
+    minHeight: 250,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: spacing.xl,
+  },
   verseTop: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   verseChip: {
     paddingHorizontal: spacing.md,

@@ -554,11 +554,24 @@ const styles = StyleSheet.create({
   prayerRow: { paddingHorizontal: spacing.lg, paddingVertical: spacing.md, gap: spacing.sm },
   prayerLabel: { marginBottom: 2 },
   prayerChips: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
-  prayerChip: { paddingHorizontal: spacing.lg, paddingVertical: 9, borderRadius: radius.pill },
+  prayerChip: {
+    justifyContent: 'center',
+    minHeight: 44,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: 9,
+    borderRadius: radius.pill,
+  },
   prayerChipText: { ...typeScale.caption, fontWeight: '700' },
 
   segmented: { flexDirection: 'row', padding: 4, borderRadius: radius.pill, gap: 4 },
-  segment: { flex: 1, alignItems: 'center', paddingVertical: 10, borderRadius: radius.pill },
+  segment: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: 44,
+    paddingVertical: 10,
+    borderRadius: radius.pill,
+  },
   segmentLabel: { ...typeScale.caption, fontWeight: '600' },
 
   disabled: { opacity: 0.4 },

@@ -120,7 +120,7 @@ export function PrayerHero({ scrollY }: { scrollY: Animated.Value }) {
               <Text style={[styles.away, { color: colors.onHeroFaint }]}>
                 {next.label}
                 {next.tomorrow ? ' besok' : ''} tinggal{' '}
-                <Text style={{ color: colors.accent }}>{formatCountdown(next.minutesAway)}</Text>
+                <Text style={{ color: colors.onHeroAccent }}>{formatCountdown(next.minutesAway)}</Text>
               </Text>
             </>
           ) : (
@@ -132,7 +132,7 @@ export function PrayerHero({ scrollY }: { scrollY: Animated.Value }) {
         <View style={[styles.strip, { borderTopColor: colors.onHeroSoft }]}>
           {STRIP.map((item) => {
             const active = next && !next.tomorrow && item.key === next.key;
-            const tint = active ? colors.accent : colors.onHero;
+            const tint = active ? colors.onHeroAccent : colors.onHero;
             return (
               <View key={item.key} style={styles.stripItem}>
                 <Text
@@ -148,7 +148,7 @@ export function PrayerHero({ scrollY }: { scrollY: Animated.Value }) {
                   style={{ opacity: active ? 1 : 0.8 }}
                 />
                 <Text style={[styles.stripTime, { color: tint, opacity: active ? 1 : 0.9 }]}>
-                  {day ? (day[item.key] as string) : '—'}
+                  {day ? (day[item.key] as string) : '-'}
                 </Text>
               </View>
             );
